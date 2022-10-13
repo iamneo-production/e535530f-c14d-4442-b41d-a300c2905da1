@@ -2,6 +2,7 @@ import userEvent from '@testing-library/user-event';
 import React,{useRef} from 'react'
 import axios from 'axios';
 import  { useNavigate } from 'react-router-dom'
+import './APP.css'
 
 const Signup = ()=>{
 
@@ -45,6 +46,7 @@ const Signup = ()=>{
         if(roleV == "USER"){
             axios.post("http://localhost:8081/user/signup",obj)
             .then((resp)=>{
+                console.log(resp.data);
                 if(resp.data == "User added"){
                     alert("user registered");
                     navigate('/login');
@@ -76,7 +78,7 @@ const Signup = ()=>{
 
     return(
         <>
-            <div class="mh-100  col-7 mt-5 d-inline-block bg-info">
+            <div class="mh-100 col-8 mt-5 d-inline-block bg-info">
                 
                 <div  class="container col-3 mt-5  mb-5">
                     <h3> Sign Up</h3>

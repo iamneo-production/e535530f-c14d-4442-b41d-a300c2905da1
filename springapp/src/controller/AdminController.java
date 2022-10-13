@@ -45,8 +45,8 @@ public class AdminController {
 		return adminService.editCourse(courseId,courseDAO);
 	}
 	
-	@DeleteMapping("/admin/deleteCourse")
-	String deleteCourse(@RequestParam int courseId) throws NotFound {
+	@DeleteMapping("/admin/deleteCourse/{courseId}")
+	String deleteCourse(@PathVariable int courseId) throws NotFound {
 		return adminService.deleteCourse(courseId);
 	}
 	

@@ -1,13 +1,20 @@
 import React,{useState} from 'react';
 import { Navbar,Container,Nav,Dropdown,Modal,Button,Form,Table,Row,Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import Enrolledcourse from "./Enrolledcourse";
 
 const ViewAcademy = () =>{
+    const nav=useNavigate();
     const [viewCourse,setViewCourse] = useState(false);
     const [allCourses,setAllCourses] = useState([]);
     const course = {
-        name:"mahii"
+        name:"subash"
     }
+   function handle(){
+        localStorage.clear();
+        window.location.href='/';
+    }
+
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -28,8 +35,7 @@ const ViewAcademy = () =>{
                             <Nav.Link id="userEnrolledCourse" onClick={()=>{
                                 
                                 setViewCourse(!viewCourse);
-                            }} style={{ paddingLeft: '250px' }}>Enrolled course</Nav.Link> 
-                            <Nav.Link id = "logout" style={{ paddingLeft: '500px' }}>Logout</Nav.Link> 
+                            }} style={{ paddingLeft: '250px' }}>Enrolled course</Nav.Link>  
                         </Nav>
                          </Navbar.Collapse>
                     </Container>
